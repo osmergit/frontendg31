@@ -31,6 +31,7 @@ export const CompCreateUser = () => {
                         value={nomuser}
                         onChange={ (e)=> setUsuario(e.target.value)} 
                         type="text"
+                        className='form-control'
                         placeholder = "Ingrese su nombre"
                     />    
                      
@@ -42,6 +43,7 @@ export const CompCreateUser = () => {
                         value={correo}
                         onChange={ (e)=> setContent(e.target.value)} 
                         type="email"
+                        className='form-control'
                         placeholder = "Correo"
                     />    
                              

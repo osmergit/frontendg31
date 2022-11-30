@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 //aca inicia
 export const Login = () => {
@@ -63,6 +64,10 @@ export const Login = () => {
             
                 <div className="login-form">
                    <h3>Usuarios Registrados</h3>
+                   
+                   <Card>
+                   <Card.Body>
+    
                     <Form >
                         <Form.Control
                           
@@ -84,6 +89,8 @@ export const Login = () => {
                         </Button>
                         <Link to="/create" className='btn-register'>Sign Up</Link>
                     </Form>
+                    </Card.Body>
+                    </Card>
                 </div>
           
       

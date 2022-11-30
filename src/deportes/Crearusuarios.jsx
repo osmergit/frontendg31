@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 //import '../../src/style.css';
 //import '../style.css';
+import Swal from 'sweetalert2'
 
 const URI = 'http://localhost:8000/usuarios/reguser'
 
@@ -16,8 +17,24 @@ export const CompCreateUser = () => {
     //procedimiento guardar
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(URI, {correo:correo, nomuser: nomuser, password: password})
-        navigate('/users')
+        Swal.fire({
+            title: 'Guardar Usuario',
+            text: 'Esta ud seguro de querer guardar los datos del usuario',
+            icon: 'success',
+            showDenyButton: true,
+            denyButtonText: "NO",
+            confirmButtonText: "SI"
+
+        }).then ( response => {
+                 if (response.isConfirmed){
+                     axios.post(URI, {correo:correo, nomuser: nomuser, password: password})
+                    Swal.fire("Los datos fueron almacenados con exito")
+                     navigate('/users')
+                 } else {
+                    Swal.fire("la información no fue almacenada")
+                 }
+        })
+       
     }   
 
     return (

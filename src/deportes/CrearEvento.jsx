@@ -1,6 +1,9 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 
 const URI = 'http://localhost:8000/usuarios/regevento'
@@ -23,77 +26,85 @@ export const CompCrearEventos = () => {
     }   
 
     return (
-        <div >
+        <div className="login-form" >
            <h3>Creación de  Eventos deportivos</h3>
-           <form onSubmit={store}>
-                 
-                <div>
+           <Card>
+                   <Card.Body>
 
-                <input
+           <Form onSubmit={store}>
+                 
+                <div className="login-form">
+
+                <Form.Control
                         value={fecha}
                         onChange={ (e)=> setFecha(e.target.value)} 
                         type="text"
-                        className='form-control'
+                       
                         placeholder = "Ingrese la fecha año/mes/dia"
                     />    
                      
                                  
                   </div>
 
-                  <div>
-                  <input
+                  <div className="login-form" >
+                  <Form.Control
                         value={equipo1}
                         onChange={ (e)=> setEquipo1(e.target.value)} 
                         type="text"
-                        className='form-control'
+                    
                         placeholder = "Ingrese el Equipo 1"
                     />    
                              
                  </div>
-                 <div>
+                 <div className="login-form">
                  
-                    <input 
+                    <Form.Control 
                         value={equipo2}
                         onChange={ (e)=> setEquipo2(e.target.value)} 
                         type = "text"
-                        className='form-control'
+                        
                         placeholder = "Ingrese el Equipo 2"
                     />                 
                  </div>
 
-                 <div>
+                 <div className="login-form">
                  
-                    <input 
+                    <Form.Control
                         value={marcador1}
                         onChange={ (e)=> setMarcador1(e.target.value)} 
                         type = "text"
-                        className='form-control'
+                        
                         placeholder = "Ingrese el marcador E1"
                     />                 
                  </div>
 
-                 <div>
+                 <div className="login-form">
                  
-                 <input 
+                 <Form.Control 
                      value={marcador2}
                      onChange={ (e)=> setMarcador2(e.target.value)} 
                      type = "text"
-                     className='form-control'
+                     
                      placeholder = "Ingrese el marcador E2"
                  />                 
               </div>
-              <div>
+              <div className="login-form">
                  
-                 <input 
+                 <Form.Control 
                      value={tipoevento}
                      onChange={ (e)=> setTipoevento(e.target.value)} 
                      type = "text"
-                     className='form-control'
+                   
                      placeholder = "Ingrese el tipo Evento"
                  />                 
               </div>
-                 <button type="submit" className="btn-register">Guardar</button>                  
-           </form>
+                 <Button variant="success" type="submit" className="btn-register">Guardar</Button>                  
+                 
+                  
+          
+           </Form>
+           </Card.Body>
+            </Card>
         </div>
     )
 }

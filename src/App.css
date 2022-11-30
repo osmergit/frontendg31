@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.login-form, .contenedor {
+  width: 300px;
+  margin: 0 auto;
+}
+.login-form h3 {
+  text-align: center;
+  color:midnightblue ;
+  font-size: 28px;
+  padding: 70px 0 10px 0;
+}
+.login-form input[type="password"],
+.login-form input[type="email"],
+.login-form input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ced4da;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+}

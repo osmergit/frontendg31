@@ -3,11 +3,21 @@ import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 //import styles from "./styles.module.css";
 import Table from 'react-bootstrap/Table';
+import { FaTrashAlt, FaRegEdit, FaFileContract } from 'react-icons/fa';
+import { BsArrowsAngleContract, BsPlusCircleFill } from "react-icons/bs";
+import Swal from 'sweetalert2'
 
 const URI = 'http://localhost:8000/usuarios/shuser/'
 const URI2 = 'http://localhost:8000/usuarios/deluser/'
 
 export const CompShowUsers = () => {
+     useEffect( ()=> {
+        falerta()
+     })
+     const falerta = () => {
+        Swal.fire("Este es un ejemplo de Alert")
+     }
+    
 
     //Aca inicia el código que envia el encabezado del Token
     const token1 = localStorage.getItem("auth")
@@ -46,7 +56,7 @@ export const CompShowUsers = () => {
         <div >
             <div >
                 <div >
-                    <Link to="/create" className='btn btn-primary mt-2 mb-2'><i className="fas fa-plus"></i>crear</Link>
+                    <Link to="/create" className='btn btn-primary mt-2 mb-2'><BsPlusCircleFill  size = "35" color = "red" /></Link>
                     <Table striped bordered hover size="sm">
                         <thead >
                             <tr>
@@ -62,8 +72,10 @@ export const CompShowUsers = () => {
                                     <td > { blog.correo } </td>
                                     
                                     <td>
-                                        <Link to={`/editevento/${blog._id}`} className=''><i className="fas fa-edit"></i>edit</Link>
-                                        <button onClick={ () => deleteBlog(blog._id) } className='btn btn-danger'><i className="fas fa-trash-alt"></i>Eliminar</button>
+                                        <Link to={`/editevento/${blog._id}`} className=''><FaRegEdit size = "30" color = "blue" /></Link>
+                                    </td>
+                                    <td>    
+                                        <button onClick={ () => deleteBlog(blog._id) } className='btn btn-danger'><FaTrashAlt /> </button>
                                     </td>
                                 </tr>
                             )) }

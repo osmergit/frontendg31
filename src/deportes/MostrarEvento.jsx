@@ -1,6 +1,9 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import { FaTrashAlt, FaRegEdit } from 'react-icons/fa';
+import { BsPlusCircleFill } from "react-icons/bs";
+
 //import styles from "./styles.module.css";
 //importamos la ruta para mosstrar los eventos deportivos
 const URI = 'http://localhost:8000/usuarios/shevento'
@@ -46,7 +49,7 @@ export const CompMostrarEvento = () => {
         <div className="">
             <div className='row'>
                 <div className='col'>
-                    <Link to="/regeventos" className='btn btn-primary mt-2 mb-2'><i className="fas fa-plus"></i>Crear Evento</Link>
+                    <Link to="/regeventos" className='btn btn-primary mt-2 mb-2'><i className="fas fa-plus"></i><BsPlusCircleFill  size = "35" color = "red" /></Link>
                     <table className='table'>
                         <thead className='thead tr:first-child'>
                             <tr>
@@ -68,8 +71,10 @@ export const CompMostrarEvento = () => {
                                     <td > { blog.marcador2} </td>
                                     <td > { blog.tipoevento} </td>
                                     <td>
-                                        <Link to={`/editarevento/${blog._id}`} className=''><i className="fas fa-edit"></i>Editar Evento</Link>
-                                        <button  onClick={ () => deleteBlog(blog._id) } className='btn btn-danger'><i className="fas fa-trash-alt"></i>Eliminar</button>
+                                        <Link to={`/editarevento/${blog._id}`} className=''><FaRegEdit size = "30" color = "blue" /></Link>
+                                     </td>
+                                     <td>   
+                                        <button  onClick={ () => deleteBlog(blog._id) } className='btn btn-danger'><FaTrashAlt /> </button>
                                     </td>
                                 </tr>
                             )) }

@@ -3,13 +3,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link,Outlet} from 'react-router-dom'
+import {Principal} from './Presentacion.jsx'
 export const NavBarComp = () => {
 
 return (
 <>
 <Navbar collapseOnSelect expand="lg"  bg="light"  variant="light">
       <Container>
-        <Navbar.Brand href="#home">Eventos Deportivos</Navbar.Brand>
+        <Navbar.Brand as = {Link} to = {"/"}>Eventos Deportivos</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

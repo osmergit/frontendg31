@@ -13,6 +13,7 @@ import {Logo} from './deportes/Logo.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavBarComp} from './deportes/NavbarComp.jsx'
 import {Login} from './deportes/Login.jsx'
+//import {Principal} from './deportes/Presentacion.jsx'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
                       <Routes>
                         <Route path= '/' element= { <NavBarComp />} >
+                          
                               <Route path= '/ad' element= { <Admin />} />
                               <Route path= '/users' element= { <CompShowUsers />} />
                               <Route path= '/login' element= { <Login />} />
